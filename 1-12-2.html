@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>javascript function</h1>
+    <p class="print1"></p>
+    <p class="print2"></p>
+
+
+    <script lang="java">
+        let text = "input ";
+
+        // let text = "input " + carName;
+        // carName은 car() 함수 안에서 호출된거라 밖으로 불러 낼 수 없음
+        // let은 재선언이 안되지만 호출 범위가 다르기 때문에 여기서는 가능
+        document.querySelector(".print1").innerHTML = text
+
+        function car(){
+            let carName = "k5";
+            let text = "output : " + carName;
+        document.querySelector(".print2").innerHTML = text
+            }
+
+        car()
+    </script>
+</body>
+</html>

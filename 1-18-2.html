@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script lang="java">
+        var child = window.open("", "", "width=400, height=200");
+
+        child.moveTo(0,0)
+        //moveTo : 창이 열릴 위치 (좌표) - 고정주소
+
+        // 창이 시간이 흐름에 따라 이동
+        setInterval(function(){
+            child.moveBy(10,10)
+        },1000)
+        //moveBy = 마지막 위치을 기준으로 움직일 좌표 
+    </script>
+</body>
+</html>

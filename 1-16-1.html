@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(function(){
+            $("#startdate").change(function(){
+                var date = $("#startdate").val()
+                console.log(date);
+                console.log(typeof(date));
+                 
+                var year = date.getFullYear()
+                console.log(year)
+
+        document.getElementsByName("f_date").forEach( e =>{
+            e.addEventListener("click", function(){
+                switch(this.value){
+                    case "1" :
+                        console.log("일주일"); 
+                        newDate = setDate(date.getDate() + 7); 
+                        console.log("new : " , newDate)
+                        $("#demo").text(newDate);
+                        break;
+                    case "2" :
+                        console.log("3개월"); 
+                        newDate = setDate(date.getMonth() + 3); 
+                        console.log("new : " , newDate)
+                        $("#demo").text(newDate);
+                        break;
+                    case "3" :
+                        console.log("6개월"); 
+                        newDate = setDate(date.getMonth() + 6);
+                        console.log("new : " , newDate)
+                        $("#demo").text(newDate);
+                        break;
+                    case "4" :
+                        console.log("1년"); 
+                        newDate = setDate(date.getFullYear() + 1);
+                        console.log("new : " , newDate)
+                        $("#demo").text(newDate);
+                        break;
+                }//switch
+            })//addEvent
+        })//change
+
+        })//f_date
+
+        
+
+
+
+
+        })//jquery
+    </script>
+</head>
+<body>
+    
+    <h3>기간 조회하기</h3>
+    <form action="#">
+        시작 날짜 : <input type="date" class="datepic" id="startdate"> <br> <br>
+        종료 날짜 : <input class="datepic" id="enddate"> <br> <br>
+
+        <div>
+            <button value="1" name="f_date">1주일</button>
+            <button value="2" name="f_date">3개월</button>
+            <button value="3" name="f_date">6개월</button>
+            <button value="4" name="f_date">1년</button>
+        </div>
+
+    </form>
+
+    <div id="demo"></div>
+
+    <script lang="java">
+
+        // let startDate = document.getElementById("startdate").value;
+        // console.log(startDate);
+
+        // let date =  new Date();
+
+        // let minDate = getFormatDate(date);
+
+        // // date.setDate(  );
+        // let maxDate = getSelection(date);
+
+        // function getFormatDate(date){
+        //     var year =  date.getFullYear(); //연도
+        //     var month =  date.getMonth() + 1; //월
+        //     //삼항 연산자 
+        //     //조건식 ? 참일 때 : 거짓일 떼
+        //     month = month >= 10 ?  month : "0" + month ;
+        //     //1~9월이면 01~09월로 표기
+        //     var day =  date.getDate(); //날짜
+        //     day = day >= 10 ?  day : "0" + day ;
+        //      //1~9일이면 01~09일로 표기
+        //     return year + "-" + month + "-" + day
+        // }//
+
+
+        // document.getElementsByName("f_date").forEach( e =>{
+        //     e.addEventListener("click", function(){
+        //         switch(this.value){
+        //             case "1" :
+        //                 console.log("일주일"); 
+        //                 newDate = setDate(startDate.getDate() + 7); break;
+        //             case "2" :
+        //                 console.log("3개월"); 
+        //                 newDate = setDate(startDate.getMonth() + 3); break;
+        //             case "3" :
+        //                 console.log("6개월"); 
+        //                 newDate = setDate(startDate.getMonth() + 6); break;
+        //             case "4" :
+        //                 console.log("1년"); 
+        //                 newDate = setDate(startDate.getFullYear() + 1); break;
+        //         }//switch
+        //     })//addEvent
+        // })//f_date
+
+// addEventListener: 이벤트 주는 명령어
+//value = "1"에서 1은 숫자 아닌 문자
+
+
+
+
+
+
+
+
+        // var date = new Date();
+        // //현재 날짜 및 시간
+        // console.log(date)
+
+        // var date1 = new Date(1990,11,25,3,50) 
+        // //내가 설정한 날짜 및 시간
+        // console.log(date1)
+        
+        // var date2 = new Date("2024-01-16")
+        // console.log(date2)
+        
+        // var date3 = new Date("2024-01-16 14:12:36")
+        // console.log(date3)
+
+        // // 1s = 1000ms
+        // // 1m = 60s * 1000ms = 60,000ms
+        // // 1h = 60m * 60,000ms = 3,600,000ms
+        // // 1d = 24h * 3,600,000ms = 86,400,000ms
+        
+        // var date4 = new Date(0)
+        // console.log(date4)
+        
+        // var date5 = new Date(86400000)
+        // console.log(date5)
+        
+        // var year = date.getFullYear;
+        // console.log(year)
+
+        // var month = date.getMonth;
+        // console.log(month+1)
+        // // 1은 인덱스 번호로 0이므로 +1
+
+        // var day = date.getDay();
+        // console.log(day+1)
+        // //날짜의 요일을 숫자로 표현된 것
+        // //0~6 일~토
+
+        // switch (day){
+        //     case 0 :
+        //        console.log("일요일"); break;
+        //     case 1 :
+        //     console.log("월요일"); break;
+        //     case 2 :
+        //     console.log("화요일"); break;
+        //     case 3 :
+        //     console.log("수요일"); break;
+        //     case 4 :
+        //     console.log("목요일"); break;
+        //     case 5 :
+        //     console.log("금요일"); break;
+        //     case 6 :
+        //     console.log("토요일");
+        // }
+
+        // var D_date = date.getDate()
+        // console.log(D_date) //날짜 데이터
+        
+        // var D_hour = date.getHours()
+        // console.log(D_hour) //시간 데이터
+        
+        // var D_min = date.getMinutes()
+        // console.log(D_min) //분 데이터
+        
+        // var D_sec = date.getSeconds()
+        // console.log(D_sec) //초 데이터
+        
+        // var D_time = date.getTime()
+        // console.log(D_time) //기간 데이터
+
+
+    </script>
+</body>
+</html>

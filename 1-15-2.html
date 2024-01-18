@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h2>자바스크립트 함수</h2>
+    <form action="abc.php" name="myform" onsubmit="return call_f()" method="post">
+        이름 : 
+        <input type="text" name="fname">
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script lang="java">
+        function call_f(){
+            let x = document.forms["myform"]["fname"].value;
+            if( x == ""){
+                alert("이름을 입력하세요")
+                return false;
+            }//
+            console.log("fjskfjls")
+        }//
+
+    </script> -->
+
+<!-- <h2>자바스크립트 함수 1~10 입력 받기</h2>
+<form action="11.php" onsubmit="myfunction()" method="post">
+    <input type="text" id="number">
+    <input type="submit" value="submit">
+</form>
+
+<div id="demo"></div>
+
+<script lang="java">
+    function myfunction(){
+        let x = document.getElementById("number").value;
+        if(x >= 1 && x <= 10){
+            text = "입력 ok"
+        }else{
+            text = "입력 false"
+        }//
+        document.getElementById("demo").innerHTML = text
+    }
+</script> -->
+
+<input type="text" name="" id="test">
+<button ondblclick="myf()">submit</button>
+<div id="demo"></div>
+
+<script lang="java">
+    function myf(){
+        let x = document.getElementById("test").value;
+
+        let text ;
+        if(isNaN(x) || x < 1 || x > 10){
+            text = "오류"
+        }else{
+            text = "확인"
+        }//
+        document.getElementById("demo").innerHTML = text
+    }//
+</script>
+</body>
+</html>

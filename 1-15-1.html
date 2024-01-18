@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">1233</p>
+    <span class="s_l">265</span>
+    <p class="test">2524</p>
+
+    <script lang="java">
+        const ele_demo = document.getElementById("demo");
+        console.log(ele_demo)
+        ele_demo.innerHTML = "안녕"
+
+        const ele = document.getElementsByTagName("span");
+        console.log(ele)
+        els.attribute() = "새로운 값"
+        //새로운 값을 넣음
+        els.setAttribute("class", "on")
+        // class 이름은 on으로 바꿔줌
+        els.getAttribute("class")
+        //기존의 속성값을 가져옴
+
+        var ele_test = document.getElementsByClassName("test");
+        console.log(ele_test)
+
+        // document.createElement("div")
+        // //요소 추가
+        // document.removeChild("div")
+        // //요소 지우기
+        // document.appendChild("div")
+        // //가장 뒤에 div 추가
+        // document.replaceChild("div", "p")
+        // //div를 p로 바꿔줌
+        // document.write("text")
+        // //기존 내용을 지우고 새로 써줌
+
+
+    </script>
+</body>
+</html>

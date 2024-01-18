@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #container{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: relative;
+        }
+        .round{
+            width: 50px;
+            height: 50px;
+            background-color: cornflowerblue;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <p> <button onclick="move()">click me</button> </p>
+    <div id="container">
+        <div class="round"></div>
+    </div><!-- container -->
+
+
+    <script lang="java">
+        function move(){
+            let id = null;
+            const round = document.querySelector(".round");
+            let pos = 0;
+
+            id = setInterval( frame , 5)
+
+             function frame(){
+                if(pos == 350){
+                    clearInterval(id)
+                }else{
+                    pos++;
+                    round.style.left = pos + "px" 
+                    round.style.top = pos + "px"
+                    console.log(pos)
+                }//if
+            }//function frame
+
+            // round.style.left = "350px" 
+            // round.style.top =  "350px"
+        }
+    </script>
+</body>
+</html>

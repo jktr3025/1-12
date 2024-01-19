@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+        function nextRandom(limit) {
+            return Math.round(Math.random() * limit);
+        } //
+
+        var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        function randomAlphabet() {
+            return alphabet.charAt(nextRandom(25));
+        } //
+        //charAt :한 글자 한 글자 끊어옴
+        //var alphabet 인덱스 번호가  0~25이여서 랜덤값을 그에 맞춰서 변환해주기 위해 
+        //limit 값으로 25를 넣어준 것 (갯수 -1)
+
+        function randomSpeed(maxSpeed) {
+            return Math.random() * maxSpeed - Math.random() * maxSpeed;
+        } //
+
+        //random은 0~1부터의 값을 랜덤으로 가져오는 함수
+        //0과 1은 가져오지 않고 그 사이 값을 가져옴
+        //반올림, 연산자 등을 이용하여 원하는 범위의 값으로 변환하기
+
+        // return Math.random() * maxSpeed - Math.random() * maxSpeed; 
+        // 두 랜덤값은 같을 수도 다를 수도 있음
+
+        //round 반올림
+        //roundUp 올림
+        //roundDown 내림
+
+    </script>
+
+    <script lang="java">
+        //움직이는 텍스트 생성
+        var canvasWidth = 700;
+        var canvasHeight = 400;
+
+        function movingText(){
+            //위치와 속도 지정
+            this.x = nextRandom(canvasWidth);
+            this.y = nextRandom(canvasHeight);
+            this.vx = randomSpeed(10);
+            this.vy = randomSpeed(10);
+
+            //문서 객체 생성
+            this.body = document.createElement("h1");
+            this.body.innerHTML = randomAlphabet();
+            this.body.style.position = "absolute";
+            document.body.appendChild(this.body);
+            // document.body.append(this.body);  자바 스크립트에서는 appendChild임
+        } //
+
+        movingText.prototype.move = function () {
+            //범위검사
+            if (this.x < 0 || this.x > canvasWidth) {
+                this.vx *= -1;
+            } //if
+            if (this.y < 0 || this.y > canvasHeight) {
+                this.vy *= -1;
+            } //if
+
+            //이동
+            this.x += this.vx;
+            this.t += this.vy;
+
+            //화면에 이동
+            this.body.style.left = this.x + "px"
+            this.body.style.top = this.y + "px"
+
+        } //
+    </script>
+
+    <script lang="java">
+        window.onload = function () {
+            var m_texts = [];
+            for (i = 0; i < 100; i++) {
+                m_texts.push(new movingText());
+            } //for
+
+            //움직임 소환
+            setInterval(function () {
+                for (var i in m_texts) {
+                    m_texts[i].move();
+                } //for
+            }, 1000 / 30)
+
+        } //onload
+        //1000/30 : 1초에 30프레임
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
